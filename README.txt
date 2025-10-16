@@ -4,6 +4,6 @@ Na 21.10.2025:
 3. Czy są jakieś bazy testowe?
 4. Jakie są wyniki innych osiągnięte?
 
-Zbierać wszystkie linki, artykuły, githuby
 
+Zbierać wszystkie linki, artykuły, githuby
 Na następny tydzień - 12-16 najlepszych artykułów
