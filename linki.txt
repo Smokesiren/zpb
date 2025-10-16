@@ -1,0 +1,15 @@
+ZBIORY DANYCH:
+
+DECRO-dataset-v1.2.zip 2023 datasets
+https://zenodo.org/records/7603208/preview/petrichorwq/DECRO-dataset-v1.2.zip?include_deleted=0
+
+
+
+
+ARTYKUŁY
+
+Unmasking AI-created visual content: a review of generated images and deepfake detection technologies
+https://link.springer.com/article/10.1007/s44443-025-00154-8?utm_source=getftr&utm_medium=getftr&utm_campaign=getftr_pilot&getft_integrator=scopus
+
+Deepfake: definitions, performance metrics and standards, datasets, and a meta-review
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11408348/?utm_source=chatgpt.com&fbclid=IwY2xjawNbMW1leHRuA2FlbQIxMABicmlkETE0ejBmbmNmc2hvRklBQUptAR6kRkg8bc4sKT34hJDipEhRGD9auiNr4lMCgecRZf1NhfVtshD4yZcT9JExFg_aem_v1zvlPmY7zjLMOWE9uSovA#fn0019
