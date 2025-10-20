@@ -2,7 +2,10 @@ ZBIORY DANYCH:
 
 DECRO-dataset-v1.2.zip 2023 datasets
 https://zenodo.org/records/7603208/preview/petrichorwq/DECRO-dataset-v1.2.zip?include_deleted=0
-
+FaceForensics++
+https://github.com/ondyari/FaceForensics
+DFDC
+https://www.kaggle.com/competitions/deepfake-detection-challenge/data
 
 
 
