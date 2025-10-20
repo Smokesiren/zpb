@@ -13,3 +13,36 @@ https://link.springer.com/article/10.1007/s44443-025-00154-8?utm_source=getftr&u
 
 Deepfake: definitions, performance metrics and standards, datasets, and a meta-review
 https://pmc.ncbi.nlm.nih.gov/articles/PMC11408348/?utm_source=chatgpt.com&fbclid=IwY2xjawNbMW1leHRuA2FlbQIxMABicmlkETE0ejBmbmNmc2hvRklBQUptAR6kRkg8bc4sKT34hJDipEhRGD9auiNr4lMCgecRZf1NhfVtshD4yZcT9JExFg_aem_v1zvlPmY7zjLMOWE9uSovA#fn0019
+
+
+A Comprehensive Review of DeepFake Detection Using Advanced Machine Learning and Fusion Methods
+
+https://www.webofscience.com/wos/woscc/full-record/WOS:001139250400001
+
+	•	Przegląd 67 badań (2015–2023) o wykrywaniu DeepFake.
+	•	Skupia się na uczeniu maszynowym i fuzji danych (obraz, dźwięk, wideo).
+	•	Omawia modele CNN, LSTM, XceptionNet, MesoNet.
+	•	Zawiera główne bazy danych: FaceForensics++, Celeb-DF, DFDC.
+	•	Wskazuje kierunki: multi-modal, real-time detection, edge computing.
+
+
+A Review of Deepfake Techniques: Architecture,
+Detection, and Datasets
+
+https://www.webofscience.com/wos/woscc/full-record/WOS:001346087100001
+
+	•	Analiza ponad 100 badań (2017–2024) o architekturach i metodach DeepFake.
+	•	Omawia GAN, CNN, Transformers, ViT, GNN.
+	•	Zawiera przegląd datasetów: FaceForensics++, DFDC, Celeb-DF, KoDF.
+
+
+A systematic literature review on deepfake detection
+techniques
+
+https://link.springer.com/article/10.1007/s11042-024-19906-1
+
+	•	Systematyczny przegląd 81 badań (2018–2023).
+	•	Opisuje proces tworzenia DeepFake (GAN, autoenkodery).
+	•	Klasyfikuje metody wykrywania: deep learning, ML i statystyczne.
+	•	Przegląd datasetów: FaceForensics++, DFDC, Celeb-DF, WildDeepFake.
+	
