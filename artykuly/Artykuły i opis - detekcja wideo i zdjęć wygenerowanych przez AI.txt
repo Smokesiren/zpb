@@ -1,0 +1,247 @@
+1 artykuł - Deep learning for deepfakes creation and detection: A survey
+https://www.scopus.com/pages/publications/85135897196?origin=resultslist
+https://www.sciencedirect.com/science/article/pii/S1077314222001114?pes=vor&utm_source=scopus&getft_integrator=scopus
+
+1. Introduction
+Czym są deepfake’i, zagrożenia, zastosowania
+Problem wiarygodności i detekcji
+Inicjatywy badawcze: DARPA MediFor, DFDC
+
+2. Deepfake Creation
+Mechanizmy tworzenia: Autoencoders, GAN, StyleGAN
+Schemat procesu
+funkcja kosztu GAN
+Narzędzia: Faceswap, DeepFaceLab, FSGAN
+Tabela 1 – porównanie technik generowania
+
+3. Deepfake Detection
+3.1. Fake Image Detection
+Handcrafted features – analiza artefaktów, szumów, statystyki
+Deep features – CNN, Siamese, SCNet
+
+3.2. Fake Video Detection
+Temporalne – CNN + LSTM/GRU, analiza ruchu, mruganie, optical flow
+Artefakty wizualne – warping, 3D head pose, capsule networks
+PRNU fingerprints – ślad sensora kamery
+Blockchain – weryfikacja źródła
+
+4. Discussion & Future Work
+„Wyścig zbrojeń”: deepfake vs detektor
+Problem braku generalizacji
+Ataki adversarialne
+Weryfikacja autentyczności (blockchain, metadane)
+Wniosek: brak 100 % pewności detekcji
+Tabela 2
+Zestawienie metod detekcji (CNN, LSTM, CapsuleNet…)
+Dane testowe: FaceForensics++, DFDC, Celeb-DF
+Porównanie dokładności i skuteczności
+
+2 artykuł - Mastering Deepfake Detection: A Cutting-edge Approach to Distinguish GAN and Diffusion-model Images
+https://www.scopus.com/pages/publications/85209696817?origin=resultslist
+https://dl.acm.org/doi/pdf/10.1145/3652027
+
+1. Introduction
+Wprowadzenie do problemu deepfake’ów.
+Porównanie dwóch głównych technologii: GAN vs Diffusion Models (DM).
+trójpoziomowy system detekcji (hierarchicznego):
+Real vs AI
+GAN vs DM
+Identyfikacja konkretnej architektury (np. StyleGAN2, DALL·E 2 itp.).
+Wyniki dokładności.
+
+2. Related Works
+2.1. Image Synthesis Methods
+Przegląd głównych modeli generatywnych:
+GAN-y: StarGAN, StyleGAN(1–3), ProGAN, CycleGAN itd.
+Diffusion Models: DALL-E 2, GLIDE, Latent Diffusion, Stable Diffusion.
+Omówienie ich cech i ograniczeń (artefakty, rozdzielczość, kontrola stylu).
+
+2.2. Deepfake Detection Methods
+Przegląd metod detekcji:
+CNN, ResNet, FakeSpotter, AutoGAN, DCT-based (fingerprinty w częstotliwości).
+Pierwsze próby detekcji diffusion models (np. DE-FAKE, Corvi et al. 2023).
+
+3. Dataset Details
+Stworzono własny zbiór: 83 000 obrazów
+40 500 prawdziwych (CelebA, FFHQ, ImageNet)
+42 500 fałszywych (9 GAN + 4 DM)
+Analiza w dziedzinie Fouriera (DFT) — znaleziono charakterystyczne ślady dla GAN i DM.
+różnice w widmach (fingerprinty w częstotliwości).
+
+4. Multi-Level Detection Framework
+Opis hierarchicznego systemu z 3 poziomami:
+Real vs AI
+GAN vs DM
+Rozpoznanie konkretnej architektury
+Modele: ResNet-101 na każdym poziomie (najlepszy z testowanych CNN-ów).
+
+5. Experimental Results
+Dokładność:
+L1 (Real vs AI): 98.93 %
+L2 (GAN vs DM): 98.45 %
+L3-DM: 99.37 %
+L3-GAN: 97.01 %
+Porównanie z metodami: AutoGAN, FakeSpotter, DCT, DE-FAKE → nowa metoda wygrywa.
+Wprowadzono pojęcie „forensic explainability” – możliwość odtworzenia „historii” obrazu.
+Obliczenia: accuracy, precision, recall, F1 (Tabela 2 i 3).
+Pokazano schemat kumulacji błędów między poziomami (Fig. 9, Eq. 1).
+
+6. Robustness and Generalization
+Testy odporności na ataki:
+Gaussian blur, rotacja, resize, JPEG compression.
+Średnia dokładność po atakach: ~0.84–0.95.
+Wyniki generalizacji:
+COCOFake → 85 %
+FaceForensics++ → 94 %
+
+3 artykuł - Securing online integrity: a hybrid approach to deepfake detection andremoval using Explainable AI and Adversarial Robustness Training
+https://www.scopus.com/pages/publications/85204454742?origin=resultslist
+https://www.tandfonline.com/doi/epdf/10.1080/00051144.2024.2400640?src=getftr&utm_source=scopus&getft_integrator=scopus
+
+1. Introduction
+Wprowadzenie do problemu deepfake’ów i zagrożeń dla prywatności, bezpieczeństwa i zaufania online.
+Wskazanie, że klasyczne detektory często są podatne na manipulacje i brakuje im interpretowalności.
+Propozycja: połączenie Explainable AI (XAI) z Adversarial Robustness Training (ART) w nowym modelu XAI-ART.
+Wyniki:
+dokładność 97.5%,
+recall 96.8%,
+
+2. Background and significance
+Przegląd literatury: przeglądy deepfake detection (Bale 2024), metody CNN+RNN, GAN detection, AI-trust frameworks.
+Wskazanie wyzwań:
+brak odporności na ataki,
+ograniczona interpretowalność modeli,
+potrzeba hybrydowych i wyjaśnialnych systemów.
+Wspomniano też badania o detekcji GAN-ów w obrazach medycznych i bezpieczeństwie AI w metaverse (AI-XR).
+
+3. Methodology: XAI + ART hybrid
+Główna część artykułu — opisana matematycznie i technicznie.
+3.1 Dataset and preprocessing
+20 000 wideo (10k realnych, 10k deepfake).
+Dane z Deepfake Detection Challenge (Kaggle).
+Technika czyszczenia: Non-local Means Denoising (NLM) – wzory (1)–(3).
+Równania do obliczeń podobieństwa patchy i uśredniania pikseli.
+
+3.2 Explainable AI (XAI)
+Wykorzystano SHAP, LIME i attention maps.
+Opis matematyczny działania attention (równania 4–6).
+Mapy uwagi pokazują, które regiony (np. oczy, usta, krawędzie twarzy) wskazują manipulację.
+XAI zwiększa przejrzystość decyzji modelu i umożliwia analizę kryminalistyczną.
+
+3.3 Adversarial Robustness Training (ART)
+generowanie perturbacji i augmentację danych (rotacja, skalowanie, szum).
+Model trenuje na danych czystych + zakłóconych (FGSM, PGD).
+Celem jest nauczenie modelu odporności na modyfikacje obrazu i ataki.
+
+3.4 Hybrid XAI-ART
+Połączenie odporności (ART) z interpretowalnością (XAI).
+Wzory (10)–(20):
+Lfusion = Loriginal + α·Ladv + β·R (równ. 13) — kluczowa formuła łącząca oba cele.
+Regularizacja dla interpretowalności, gradient descent, wybór najlepszego modelu wg metryk: dokładność, odporność, interpretowalność.
+Pokazano wykresy metryk (accuracy, recall, F1) oraz spadek False Positive Rate / False Negative Rate.
+
+3.5 Removal of detected deepfake
+Propozycja systemu automatycznego usuwania deepfake’ów z internetu.
+Ujęcie formalne i matematyczne (priorytetyzacja wg szkodliwości, prawnych aspektów, DMCA compliance).
+Schemat systemu
+
+4. Results and Findings
+Wyniki modelu (Tabela 1–3):
+Accuracy: 0.95–0.97,
+Precision: 0.92–0.94,
+Recall: 0.96–0.98,
+F1: 0.96,
+AUC-ROC: 0.98.
+Wykresy wzrost dokładności w kolejnych epokach, spadek FPR/FNR.
+Tabela 4 – porównanie czasu odpowiedzi różnych wersji modelu
+
+5. Conclusion
+Hybrydowy model XAI-ART zwiększa:
+trafność klasyfikacji,
+odporność na manipulacje,
+przejrzystość decyzji.
+Model osiąga 97.5% skuteczności i utrzymuje stabilność nawet przy atakach adversarialnych.
+Możliwość realnego wdrożenia do systemów moderacji treści online.
+
+4 artykuł - Multiclass AI-Generated Deepfake Face Detection Using Patch-Wise Deep Learning Model
+https://www.scopus.com/pages/publications/85183387021?origin=resultslist
+https://www.mdpi.com/2073-431X/13/1/31
+
+1. Introduction
+Wzrost liczby treści wizualnych w mediach społecznościowych i zagrożenia związane z deepfake’ami.
+Problem: coraz trudniejsze rozróżnianie prawdziwych i syntetycznych twarzy.
+Celem pracy jest wykrywanie i klasyfikacja wieloklasowa (multiclass) — nie tylko „real/fake”, ale także:
+prawdziwe,
+wygenerowane przez GAN,
+wygenerowane przez Diffusion,
+połączenie GAN + Diffusion (Stable&GAN_Fake).
+Wprowadzenie Vision Transformer (ViT) jako skuteczniejszej alternatywy dla CNN (ResNet, VGG).
+
+2. Related Works
+Przegląd wcześniejszych metod:
+klasyczne podejścia: analiza ruchu oczu, mimiki, oświetlenia,
+CNN: VGG16, ResNet, DenseNet, GoogleNet,
+transformery i modele multi-attention (Trans-DF, MSTA_Net, Multi-modal Transformer).
+Omówienie zalet ViT:
+globalny kontekst obrazu,
+samouwaga (self-attention),
+mapy uwagi pokazujące ważne fragmenty twarzy,
+odporność na szum i manipulacje.
+
+3. Proposed Methodology
+3.1 Dataset
+40 000 obrazów (10k w każdej klasie):
+Real (Kaggle)
+GAN_Fake (online source)
+Diffusion_Fake (Stable Diffusion text-to-image)
+Stable&GAN_Fake (StyleGAN2 + Stable Diffusion)
+Zrównoważony zbiór danych — równy udział klas.
+Wzory (1)–(3) opisują proces generowania i enkodowania obrazów w Stable Diffusion i StyleGAN2.
+
+3.2 ViT Architecture
+Wprowadzenie modelu Vision Transformer (ViT).
+Etapy:
+Patch embedding (podział obrazu na 16×16 pikseli, wektoryzacja).
+Positional embedding (dodanie informacji o położeniu).
+Transformer encoder (warstwy self-attention).
+Classification head (Softmax, 4 klasy).
+
+Równania (4)–(8): matematyczny opis przetwarzania patchy i mechanizmu MSA (Multi-head Self-Attention).
+Parametry:
+12 warstw,
+768 jednostek ukrytych,
+85,8 mln parametrów,
+learning rate 2×10⁻⁵,
+5 epok.
+
+3.3 Porównanie z CNN
+Porównano ViT z ResNet-50 i VGG-16.
+Dla CNN zamrożono wcześniejsze warstwy, dodano warstwę SoftMax (4 neurony).
+Wynik: ViT znacznie skuteczniejszy w wykrywaniu nowych manipulacji.
+
+4. Experiments and Results
+4.1 Metrics
+Accuracy, Precision, Recall, F1 (równania 9–12).
+
+4.2 Wyniki
+Dane treningowe: 28 802 obrazów, walidacja 7 198, test 4 000.
+Straty
+Wyniki 
+Dokładność
+
+4.2.1 Comparison with CNN
+ViT lepiej wykrywa globalne artefakty i łączy lokalne oraz semantyczne ślady manipulacji.
+
+4.2.2 Comparison with Literature
+Większość poprzednich badań to klasyfikacja binarna (real/fake).
+ViT wprowadza pierwsze podejście wieloklasowe (multiclass) – rozróżnianie różnych typów AI-generacji.
+
+4.2.3 Implications
+Model ViT → lepsza generalizacja, odporność na nowe typy generatorów.
+Może służyć jako narzędzie kryminalistyczne do identyfikacji źródła deepfake’a.
+
+5. Conclusions
+ViT umożliwia dokładną i odporną detekcję deepfake’ów w trybie wieloklasowym.
+Osiąga 99.9% skuteczności, przewyższa CNN.
+Proponuje stworzenie publicznego zestawu danych i rozszerzenie o wideo.
+
