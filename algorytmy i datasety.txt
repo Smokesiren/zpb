@@ -1,0 +1,70 @@
+Algorytmy (Takie co mają otwarty kod i jakieś artykuły do tego, każdy artykuł był przedstawiony na jakiejś konferencji w 2024):
+
+FreqNet 
+https://github.com/chuangchuangtan/FreqNet-DeepfakeDetection
+https://arxiv.org/pdf/2403.07240
+
+LAA‑Net
+https://github.com/10Ring/LAA-Net
+https://arxiv.org/pdf/2401.13856
+
+SSL-ViTs
+https://github.com/nii-yamagishilab/ssl_vits_df
+https://arxiv.org/pdf/2405.00355
+
+NPR
+https://github.com/chuangchuangtan/NPR-DeepfakeDetection
+https://arxiv.org/pdf/2312.10461
+
+
+Datasety:
+To są niby najlepsze datasety i są używane w większości artykułów, ale trzeba jakieś formularze wypełnić, żeby dostać link do pobrania.
+
+Celeb-DF
+https://github.com/yuezunli/celeb-deepfakeforensics
+
+FF++
+https://github.com/ondyari/FaceForensics
+
+
+
+
+
+Podsumowanie (wiadomo skąd):
+
+ 1. Frequency-Aware Deepfake Detection (FreqNet, AAAI 2024)
+
+Metoda FreqNet wykorzystuje analizę w domenie częstotliwościowej (FFT), łącząc informacje o amplitudzie i fazie obrazu z klasycznymi cechami CNN, co pozwala lepiej uchwycić artefakty generacyjne.
+Autorzy przetestowali model na obrazach generowanych przez 17 różnych modeli GAN, koncentrując się na uogólnieniu na nieznane źródła.
+Wyniki pokazały średnią poprawę skuteczności o około 9.8 % względem wcześniejszych metod w scenariuszach „unseen generator”, przy jednoczesnym ograniczeniu liczby parametrów modelu (~1.9 mln).
+FreqNet cechuje się bardzo dobrą zdolnością generalizacji między zestawami danych.
+
+ 2. LAA-Net: Localized Artifact Attention Network (CVPR 2024)
+
+LAA-Net wprowadza mechanizm lokalnej uwagi (Localized Spatial Attention) i uczenia wielozadaniowego (klasyfikacja + mapa artefaktów), by lepiej identyfikować subtelne ślady manipulacji w wysokiej jakości deepfake’ach.
+Model trenowano i testowano na FaceForensics++ (FF++), a następnie w scenariuszach cross-dataset na Celeb-DF(v2).
+Wyniki in-dataset osiągnęły AUC ≈ 99.95 % i ACC ≈ 99.03 %, co stanowiło najwyższy wynik spośród porównywanych metod.
+Podczas testów międzyzbiorowych LAA-Net zachował wysoką stabilność, przewyższając wcześniejsze detektory CNN.
+
+ 3. SSL-ViTs: Self-Supervised Vision Transformers for Deepfake Detection (IJCB 2024)
+
+Ta metoda bada użycie Vision Transformerów (ViT) trenowanych w trybie self-supervised learning (np. DINO, MAE, CLIP) jako uniwersalnych detektorów deepfake.
+Eksperymenty wykonano na standardowych zestawach FaceForensics++ i Celeb-DF(v2), porównując różne warianty SSL-ViT.
+Wyniki pokazały, że SSL-ViT (DINO) jest bardziej odporny na transformacje danych (np. kompresję, zmiany rozdzielczości) niż modele CLIP i klasyczne CNN, osiągając AUC ≈ 97–98 % przy ograniczonej liczbie próbek treningowych.
+Metoda wyróżnia się wysoką odpornością i transferowalnością przy niewielkim nakładzie danych.
+
+ 4. NPR: Rethinking the Up-Sampling Operations in CNN-based Generative Networks (CVPR 2024)
+
+NPR koncentruje się na artefaktach wynikających z operacji up-samplingu w sieciach generatywnych, analizując tzw. Neighboring Pixel Relationships (NPR).
+Model trenowano na dużym „open-world” zbiorze obejmującym 28 różnych generatorów, co umożliwiło badanie uogólnienia na zupełnie nowe źródła.
+Wyniki pokazały poprawę o ~11.6 % (AUC) względem poprzednich metod w testach cross-generator, ustanawiając nowy stan-techniki dla ogólnej detekcji deepfake.
+Metoda charakteryzuje się najlepszą generalizacją między modelami generatywnymi spośród obecnych podejść CNN-owych.
+
+
+
+Aby odtworzyć i porównać te cztery algorytmy, użyj:
+
+FaceForensics++ (C23) → jako główny zbiór treningowy,
+
+Celeb-DF (v2) oraz WildDeepfake → jako zbiory testowe do oceny generalizacji (cross-dataset),
+
